@@ -15,10 +15,12 @@ Jeweler::Tasks.new do |gem|
   gem.name = "mms-mime"
   gem.homepage = "http://github.com/kigster/mms-mime"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = %Q{MM7 wrapped MMS mime message parsing}
+  gem.description = %Q{
+This gem was written with a simple aim to parse MM7 wrapped binary and base64 encoded MMS messages received via
+MM7/XML HTTP post from an MM7 compatible gateway connection (such as OpenWave, OpenMarket, etc).}
   gem.email = "kigster@gmail.com"
-  gem.authors = ["Konstantin"]
+  gem.authors = ["Konstantin Gredeskoul"]
   # Include your dependencies below. Runtime dependencies are required when using your gem,
   # and development dependencies are only needed for development (ie running rake tasks, tests, etc)
   #  gem.add_runtime_dependency 'jabber4r', '> 0.1'
