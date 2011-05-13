@@ -10,7 +10,8 @@ doc
 
 # bundler
 .bundle
-
+# rubymine
+.idea
 # jeweler generated
 pkg
 
