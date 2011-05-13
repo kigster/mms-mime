@@ -1,6 +1,24 @@
 = mms-mime
 
-Description goes here.
+This gem was written with a simple aim to parse MM7 wrapped binary and base64 encoded MMS messages received via
+MM7/XML HTTP post from an MM7 compatible gateway connection (such as OpenWave, OpenMarket, etc).
+
+The gem provides a simple way to parse and access MMS message contents, such as from, to, subject and content parts
+(including image and text parts).
+
+== Usage
+
+    require 'mms-mime'
+
+    p = Mime::Mms::Parser.new :bytes => env['rack.input'].read
+    m = p.parse
+
+    m.subject     => "Hello!"
+    m.text        => "Test MM"
+    m.from        => "77777"
+    m.to          => "14155556666"
+
+    File.open("image.jpg","w") { |f| f.write m.image_parts.first.body }
 
 == Contributing to mms-mime
  
@@ -14,6 +32,5 @@ Description goes here.
 
 == Copyright
 
-Copyright (c) 2011 Konstantin. See LICENSE.txt for
-further details.
+Copyright (c) 2011 Konstantin Gredeskoul. See LICENSE.txt for further details.
 
